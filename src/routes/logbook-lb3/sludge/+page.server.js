@@ -9,7 +9,7 @@ export const actions = {
 		formData.append('jumlah', data.get('jumlah'));
 
 		console.log(formData);
-		const res = await fetch('http://127.0.0.1:5000/lingkungan/lb3', {
+		const res = await fetch('http://pltdktm.anpy.my.id/lingkungan/lb3', {
 			method: 'POST',
 			body: formData
 		});
