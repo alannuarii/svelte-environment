@@ -85,6 +85,6 @@
 
 <style>
 	.offcanvas {
-		height: 420px;
+		min-height: 420px;
 	}
 </style>
