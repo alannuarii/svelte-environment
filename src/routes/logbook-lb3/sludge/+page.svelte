@@ -2,7 +2,10 @@
 	import LogbookLb3 from '../../components/LogbookLB3.svelte';
 
 	export let data;
-	console.log(data.data);
+
+	let mutasiLB3 = data.data;
+
+	$: saldo = 0;
 </script>
 
-<LogbookLb3 lb3="sludge" />
+<LogbookLb3 lb3="sludge" mutasi={mutasiLB3} {saldo} />
