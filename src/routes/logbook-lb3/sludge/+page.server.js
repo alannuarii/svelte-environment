@@ -9,11 +9,11 @@ export const actions = {
 		formData.append('jumlah', data.get('jumlah'));
 
 		console.log(formData);
-		const res = await fetch('http://pltdktm.anpy.my.id/lingkungan/lb3', {
-			method: 'POST',
-			body: formData
-		});
+		// const res = await fetch('http://pltdktm.anpy.my.id/lingkungan/lb3', {
+		// 	method: 'POST',
+		// 	body: formData
+		// });
 
-		return res.json();
+		// return res.json();
 	}
 };

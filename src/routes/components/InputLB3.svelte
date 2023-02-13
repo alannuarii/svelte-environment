@@ -1,5 +1,19 @@
 <script>
 	export let jenis;
+
+	let inputValue = '';
+	let showError = false;
+
+	function validateInput(event) {
+		const value = event.target.value;
+
+		if (!/^\d+(\.\d+)?$/.test(value)) {
+			showError = true;
+		} else {
+			showError = false;
+			inputValue = value;
+		}
+	}
 </script>
 
 <div
@@ -18,7 +32,7 @@
 			<div class="mb-3">
 				<!-- svelte-ignore a11y-label-has-associated-control -->
 				<label class="form-label">Tanggal</label>
-				<input type="date" class="form-control" name="tanggal" />
+				<input type="date" class="form-control" name="tanggal" required />
 			</div>
 			<div class="mb-3">
 				<!-- svelte-ignore a11y-label-has-associated-control -->
@@ -30,6 +44,7 @@
 						name="status"
 						id="flexRadioDefault1"
 						value="masuk"
+						required
 					/>
 					<label class="form-check-label" for="flexRadioDefault1">Masuk</label>
 				</div>
@@ -39,7 +54,8 @@
 						type="radio"
 						name="status"
 						id="flexRadioDefault2"
-						value="masuk"
+						value="keluar"
+						required
 					/>
 					<label class="form-check-label" for="flexRadioDefault2">Keluar</label>
 				</div>
@@ -47,11 +63,21 @@
 			<div class="mb-4">
 				<!-- svelte-ignore a11y-label-has-associated-control -->
 				<label class="form-label">Jumlah (Ton)</label>
-				<input type="number" class="form-control" name="jumlah" />
+				<input
+					type="text"
+					class="form-control"
+					bind:value={inputValue}
+					on:input={validateInput}
+					name="jumlah"
+					required
+				/>
+				{#if showError}
+					<p class="text-danger mt-1">Mohon masukkan angka</p>
+				{/if}
 			</div>
 			<div class="d-flex justify-content-center">
 				<button type="reset" class="btn btn-outline-primary me-1">Reset</button>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-primary" disabled={showError}>Submit</button>
 			</div>
 		</form>
 	</div>
