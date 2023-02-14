@@ -48,7 +48,7 @@
 
 <style>
 	.offcanvas {
-		width: 80%;
+		width: 50%;
 	}
 	p {
 		margin: 0px;
