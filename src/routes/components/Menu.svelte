@@ -1,9 +1,5 @@
-<script>
-	let hideOffCanvas = 'hide';
-</script>
-
 <div
-	class="offcanvas offcanvas-end text-bg-dark {hideOffCanvas}"
+	class="offcanvas offcanvas-end text-bg-dark"
 	tabindex="-1"
 	id="offcanvasRight"
 	aria-labelledby="offcanvasRightLabel"
@@ -47,9 +43,6 @@
 </div>
 
 <style>
-	.offcanvas {
-		width: 50%;
-	}
 	p {
 		margin: 0px;
 	}

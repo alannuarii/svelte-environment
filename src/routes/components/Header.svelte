@@ -6,7 +6,12 @@
 	<div class="container-fluid">
 		<span class="navbar-brand mb-0 h1 text-light">EnvironApp</span>
 		<div>
-			<i class="bi-list text-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" />
+			<i
+				class="bi-list text-light"
+				data-bs-toggle="offcanvas"
+				data-bs-target="#offcanvasRight"
+				aria-controls="offcanvasRight"
+			/>
 			<Menu />
 		</div>
 	</div>
@@ -18,6 +23,6 @@
 	}
 	.bi-list {
 		font-size: 30px;
-        cursor: pointer;
+		cursor: pointer;
 	}
 </style>
