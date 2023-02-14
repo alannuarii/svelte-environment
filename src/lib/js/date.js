@@ -4,3 +4,10 @@ export function date(tanggal) {
 	const result = date.toLocaleDateString('id-ID', options);
 	return result;
 }
+
+export const getToday = () => {
+	let today = new Date();
+	today.setHours(today.getHours() + 8);
+	today = today.toISOString().slice(0, 10);
+	return today;
+};

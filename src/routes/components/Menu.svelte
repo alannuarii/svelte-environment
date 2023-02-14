@@ -12,7 +12,7 @@
 		<div class="mb-3">
 			<p class="text-light-emphasis mb-2">Limbah B3</p>
 			<div class="list-group list-group-flush">
-				<a href="/" class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2"
+				<a href="/saldo-lb3" class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2"
 					><i class="bi-trash2 me-2" />Saldo LB3</a
 				>
 				<a href="/logbook-lb3" class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
