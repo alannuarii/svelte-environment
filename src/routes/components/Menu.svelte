@@ -23,7 +23,7 @@
 				>
 					<i class="bi-journal-text me-2" />Logbook LB3
 				</a>
-				<a href="/" class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
+				<a href="/konversi" class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
 					<i class="bi-arrow-left-right me-2" />LB3 Converter
 				</a>
 			</div>

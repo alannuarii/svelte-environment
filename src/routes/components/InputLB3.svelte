@@ -1,19 +1,8 @@
 <script>
+	import InputDecimal from './InputDecimal.svelte';
 	export let jenis;
 
-	let inputValue = '';
 	let showError = false;
-
-	function validateInput(event) {
-		const value = event.target.value;
-
-		if (!/^\d+(\.\d+)?$/.test(value)) {
-			showError = true;
-		} else {
-			showError = false;
-			inputValue = value;
-		}
-	}
 </script>
 
 <div
@@ -61,19 +50,7 @@
 				</div>
 			</div>
 			<div class="mb-4">
-				<!-- svelte-ignore a11y-label-has-associated-control -->
-				<label class="form-label">Jumlah (Ton)</label>
-				<input
-					type="text"
-					class="form-control"
-					bind:value={inputValue}
-					on:input={validateInput}
-					name="jumlah"
-					required
-				/>
-				{#if showError}
-					<p class="text-danger mt-1">Mohon masukkan angka</p>
-				{/if}
+				<InputDecimal bind:showError label='Jumlah (Ton)' />
 			</div>
 			<div class="d-flex justify-content-center">
 				<button type="reset" class="btn btn-outline-primary me-1">Reset</button>
