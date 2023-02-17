@@ -27,7 +27,7 @@
 				<input type="date" class="form-control" name="tanggal" required />
 			</div>
 			<div class="mb-4">
-				<InputDecimal bind:showError label="Nilai Konsentrasi" />
+				<InputDecimal bind:showError label="Nilai Pengukuran" />
 			</div>
 			<div class="d-flex justify-content-center">
 				<button type="reset" class="btn btn-outline-primary me-1">Reset</button>
@@ -39,6 +39,6 @@
 
 <style>
 	.offcanvas {
-		min-height: 320px;
+		min-height: 340px;
 	}
 </style>
