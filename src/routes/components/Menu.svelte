@@ -6,7 +6,12 @@
 >
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
-		<button type="button" class="btn-close bg-secondary" data-bs-dismiss="offcanvas" aria-label="Close" />
+		<button
+			type="button"
+			class="btn-close bg-secondary"
+			data-bs-dismiss="offcanvas"
+			aria-label="Close"
+		/>
 	</div>
 	<div class="offcanvas-body">
 		<div class="mb-3">
@@ -23,7 +28,10 @@
 				>
 					<i class="bi-journal-text me-2" />Logbook LB3
 				</a>
-				<a href="/konversi" class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
+				<a
+					href="/konversi"
+					class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2"
+				>
 					<i class="bi-arrow-left-right me-2" />LB3 Converter
 				</a>
 			</div>
@@ -31,9 +39,12 @@
 		<div>
 			<p class="text-light-emphasis mb-2">Air Limbah</p>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
+				<a
+					href="/limbah-proses"
+					class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2"
+				>
 					<i class="bi-droplet-half me-2" />Logbook Limbah Proses
-				</li>
+				</a>
 				<li class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
 					<i class="bi-droplet-half me-2" />Logbook Limbah Domestik
 				</li>
