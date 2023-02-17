@@ -59,7 +59,7 @@
 		font-size: 15px;
 	}
 	i {
-		font-size: 25px;
+		font-size: 17px;
 		cursor: pointer;
 	}
 </style>

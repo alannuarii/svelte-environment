@@ -9,9 +9,12 @@
 		<slot />
 	</main>
 </div>
-<dir id="notmobile" class="d-none d-sm-block position-absolute top-50 start-50 translate-middle text-center">
+<dir
+	id="notmobile"
+	class="d-none d-sm-block position-absolute top-50 start-50 translate-middle text-center border py-4 rounded-5 shadow-sm"
+>
 	<img src={mobile} class="img-fluid w-75 mb-5" alt="Open just for mobile" />
-	<h3 class="text-dark">Akses hanya untuk <span class="text-primary fw-bolder">mobile!</span></h3>
+	<h3 class="text-dark">Akses hanya untuk <span class="text-primary">mobile!</span></h3>
 </dir>
 
 <style>
@@ -21,5 +24,11 @@
 	}
 	* {
 		color: #ffffff;
+	}
+	#notmobile h3 {
+		font-weight: 300;
+	}
+	#notmobile span {
+		font-weight: 700;
 	}
 </style>

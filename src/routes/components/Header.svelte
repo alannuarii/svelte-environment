@@ -4,7 +4,7 @@
 
 <nav class="navbar bg-dark mb-4">
 	<div class="container-fluid">
-		<span class="navbar-brand mb-0 h1 text-light">EnvironApp</span>
+		<a href="/"><span class="navbar-brand mb-0 h1 text-light">EnvironApp</span></a>
 		<div>
 			<i
 				class="bi-list text-light"
@@ -24,5 +24,8 @@
 	.bi-list {
 		font-size: 30px;
 		cursor: pointer;
+	}
+	a {
+		text-decoration: none;
 	}
 </style>

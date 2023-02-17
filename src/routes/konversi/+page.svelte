@@ -33,14 +33,30 @@
 			</div>
 			<div class="col-6">
 				<!-- svelte-ignore a11y-label-has-associated-control -->
-				<label class="form-label">Hasil Konversi (Ton)</label>
-				<input
+				<label class="form-label">Hasil Konversi</label>
+				<div>
+					<h6 class="py-2 text-primary">
+						{kalkulasi(inputValue, dataKonversi[index].nilaiSatuan)} <span>Ton</span>
+					</h6>
+				</div>
+				<!-- <input
 					type="text"
 					class="form-control"
 					value={kalkulasi(inputValue, dataKonversi[index].nilaiSatuan)}
-                    disabled
-				/>
+					disabled
+				/> -->
 			</div>
 		</div>
 	</div>
 </section>
+
+<style>
+	h6 {
+		font-size: 25px;
+		margin-bottom: 0px;
+	}
+	span {
+		font-size: 15px;
+		font-weight: 400;
+	}
+</style>

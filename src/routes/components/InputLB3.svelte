@@ -13,7 +13,7 @@
 >
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="offcanvasBottomLabel">Mutasi LB3</h5>
-		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
+		<button type="button" class="btn-close bg-secondary" data-bs-dismiss="offcanvas" aria-label="Close" />
 	</div>
 	<div class="offcanvas-body small">
 		<form method="POST">
