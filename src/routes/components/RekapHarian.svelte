@@ -3,12 +3,13 @@
 
 	export let parameter;
 	export let satuan;
+	export let jenis;
 </script>
 
 <section>
 	<div class="text-center mb-3">
 		<h1>LOGBOOK HARIAN</h1>
-		<h2>PENGUKURAN {parameter}</h2>
+		<h2>PENGUKURAN {parameter.toUpperCase()}</h2>
 		<div class="d-flex align-items-center justify-content-between mt-3 mx-3">
 			<div class="d-flex align-items-center bg-secondary p-2 rounded-2">
 				<h6 class="me-2">Periode</h6>
@@ -17,7 +18,7 @@
 			<div class="btn btn-primary ms-3" data-bs-toggle="offcanvas" data-bs-target="#parameter">
 				Input
 			</div>
-			<InputParameter />
+			<InputParameter {jenis} {parameter} />
 		</div>
 	</div>
 	<div class="mx-3">
@@ -45,5 +46,8 @@
 <style>
 	* {
 		color: #ffffff;
+	}
+	h6 {
+		margin: 0px;
 	}
 </style>

@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div class="mb-4">
-				<InputDecimal bind:showError label='Jumlah (Ton)' />
+				<InputDecimal bind:showError label='Jumlah (Ton)' nama='jumlah' />
 			</div>
 			<div class="d-flex justify-content-center">
 				<button type="reset" class="btn btn-outline-primary me-1">Reset</button>

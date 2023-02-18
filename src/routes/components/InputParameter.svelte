@@ -1,6 +1,9 @@
 <script>
 	import InputDecimal from './InputDecimal.svelte';
 
+	export let parameter;
+	export let jenis;
+
 	let showError = false;
 </script>
 
@@ -21,13 +24,15 @@
 	</div>
 	<div class="offcanvas-body small text-start">
 		<form method="POST">
+			<input type="hidden" name={jenis} />
+			<input type="hidden" name={parameter} />
 			<div class="mb-3">
 				<!-- svelte-ignore a11y-label-has-associated-control -->
 				<label class="form-label">Tanggal</label>
 				<input type="date" class="form-control" name="tanggal" required />
 			</div>
 			<div class="mb-4">
-				<InputDecimal bind:showError label="Nilai Pengukuran" />
+				<InputDecimal bind:showError label="Nilai Pengukuran" nama="nilai" />
 			</div>
 			<div class="d-flex justify-content-center">
 				<button type="reset" class="btn btn-outline-primary me-1">Reset</button>

@@ -2,6 +2,7 @@
 	export let showError = false;
 	export let label;
 	export let inputValue = '';
+	export let nama;
 
 	function validateInput(event) {
 		const value = event.target.value;
@@ -22,7 +23,7 @@
 	class="form-control"
 	bind:value={inputValue}
 	on:input={validateInput}
-	name="jumlah"
+	name={nama}
 	required
 />
 {#if showError}
