@@ -45,9 +45,12 @@
 				>
 					<i class="bi-droplet-half me-2" />Logbook Limbah Proses
 				</a>
-				<li class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2">
+				<a
+					href="/limbah-domestik"
+					class="list-group-item bg-secondary text-light border border-0 mb-2 rounded-2"
+				>
 					<i class="bi-droplet-half me-2" />Logbook Limbah Domestik
-				</li>
+				</a>
 			</ul>
 		</div>
 	</div>
@@ -56,8 +59,5 @@
 <style>
 	p {
 		margin: 0px;
-	}
-	li {
-		font-size: 17px;
 	}
 </style>
