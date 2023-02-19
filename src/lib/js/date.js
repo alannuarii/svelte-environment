@@ -14,7 +14,7 @@ export const getToday = () => {
 	// 2023-02-21 tanggal hari ini
 };
 
-export const tanggal = (format) => {
+export const formatTanggal = (format) => {
 	const date = new Date(format);
 	const year = date.getFullYear();
 	const month = ('0' + (date.getMonth() + 1)).slice(-2);
@@ -30,4 +30,14 @@ export const yearMonthNow = () => {
 	const month = date.getMonth() + 1;
 	const dateString = `${year}-${month.toString().padStart(2, '0')}`;
 	return dateString;
+	// 2023-02 tahun dan bulan saat ini
 };
+
+export const yearMonthID = (format)=>{
+	const date = new Date(format); // Membuat objek Date dari string
+	const month = new Intl.DateTimeFormat('id-ID', { month: 'long' }).format(date); // Mengambil nama bulan dalam bahasa Indonesia
+	const year = date.getFullYear(); // Mengambil tahun
+	const formattedDate = `${month} ${year}`;
+	return formattedDate
+	// Feburari 2023
+}

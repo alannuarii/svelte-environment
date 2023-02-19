@@ -24,8 +24,8 @@
 	</div>
 	<div class="offcanvas-body small text-start">
 		<form method="POST">
-			<input type="hidden" name={jenis} />
-			<input type="hidden" name={parameter} />
+			<input type="hidden" name="jenis" value={jenis} />
+			<input type="hidden" name="parameter" value={parameter} />
 			<div class="mb-3">
 				<!-- svelte-ignore a11y-label-has-associated-control -->
 				<label class="form-label">Tanggal</label>

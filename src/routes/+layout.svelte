@@ -3,6 +3,11 @@
 	import mobile from '../lib/img/mobile.svg';
 </script>
 
+<svelte:head>
+	<title>EnvironApp</title>
+	<meta name="description" content="EnvironApp" />
+</svelte:head>
+
 <div id="master" class="bg-dark bg-opacity-100 d-sm-none">
 	<Header />
 	<main>
