@@ -1,9 +1,15 @@
 <script>
 	import InputParameter from './InputParameter.svelte';
+	import { tanggal } from '../../lib/js/date';
+	import { page } from '$app/stores';
 
 	export let parameter;
 	export let satuan;
 	export let jenis;
+	export let dataHarian;
+
+	$: searchParams = $page.url.search;
+	$: valueSearch = searchParams.slice(7)
 </script>
 
 <section>
@@ -13,7 +19,9 @@
 		<div class="d-flex align-items-center justify-content-between mt-3 mx-3">
 			<div class="d-flex align-items-center bg-secondary p-2 rounded-2">
 				<h6 class="me-2">Periode</h6>
-				<input type="month" class="form-control" name="bulan" />
+				<form>
+					<input type="month" class="form-control" name="bulan" bind:value={valueSearch} onchange="this.form.submit()" />
+				</form>
 			</div>
 			<div class="btn btn-primary ms-3" data-bs-toggle="offcanvas" data-bs-target="#parameter">
 				Input
@@ -30,14 +38,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>2023-02-01</td>
-					<td>-1</td>
-				</tr>
-				<tr>
-					<td>2023-02-02</td>
-					<td>-1</td>
-				</tr>
+				{#each dataHarian as dh}
+					<tr>
+						<td>{tanggal(dh.tanggal)}</td>
+						<td>{dh.nilai}</td>
+					</tr>
+				{/each}
 			</tbody>
 		</table>
 	</div>
