@@ -1,5 +1,54 @@
 <script>
 	let satuan = 'm' + String.fromCharCode(0x00b3);
+
+	import { onMount } from 'svelte';
+
+	export let data;
+	$: saldoSludge = 0;
+	$: saldoOliBekas = 0;
+	$: saldoMajunBekas = 0;
+	$: saldoFilterBekas = 0;
+
+	let mutasiLB3 = data.data;
+
+	const calculate = (dataLB3) => {
+		const arraySludge = [];
+		const arrayOli = [];
+		const arrayMajun = [];
+		const arrayFilter = [];
+		for (const mutasi of dataLB3) {
+			if (mutasi.status === 'masuk') {
+				mutasi.jumlah *= -1;
+			} else {
+				mutasi.jumlah *= 1;
+			}
+			if (mutasi.jenis === 'sludge') {
+				arraySludge.push(mutasi.jumlah);
+			} else if (mutasi.jenis === 'oli_bekas') {
+				arrayOli.push(mutasi.jumlah);
+			} else if (mutasi.jenis === 'majun_bekas') {
+				arrayOli.push(mutasi.jumlah);
+			} else if (mutasi.jenis === 'filter_bekas') {
+				arrayOli.push(mutasi.jumlah);
+			}
+		}
+		for (const sludge of arraySludge) {
+			saldoSludge += sludge;
+		}
+		for (const oli of arrayOli) {
+			saldoOliBekas += oli;
+		}
+		for (const majun of arrayMajun) {
+			saldoMajunBekas += majun;
+		}
+		for (const filter of arrayFilter) {
+			saldoFilterBekas += filter;
+		}
+	};
+
+	onMount(() => {
+		calculate(mutasiLB3);
+	});
 </script>
 
 <section>
@@ -13,25 +62,25 @@
 			<div class="card text-bg-secondary">
 				<div class="card-header d-flex align-items-center">Sludge</div>
 				<div class="card-body">
-					<h5 class="card-title d-flex flex-column">0 <span>Ton</span></h5>
+					<h5 class="card-title d-flex flex-column">{saldoSludge} <span>Ton</span></h5>
 				</div>
 			</div>
 			<div class="card text-bg-secondary">
 				<div class="card-header d-flex align-items-center">Oli Bekas</div>
 				<div class="card-body">
-					<h5 class="card-title d-flex flex-column">0 <span>Ton</span></h5>
+					<h5 class="card-title d-flex flex-column">{saldoOliBekas} <span>Ton</span></h5>
 				</div>
 			</div>
 			<div class="card text-bg-secondary">
 				<div class="card-header d-flex align-items-center">Majun Bekas</div>
 				<div class="card-body">
-					<h5 class="card-title d-flex flex-column">0 <span>Ton</span></h5>
+					<h5 class="card-title d-flex flex-column">{saldoMajunBekas} <span>Ton</span></h5>
 				</div>
 			</div>
 			<div class="card text-bg-secondary">
 				<div class="card-header d-flex align-items-center">Filter Bekas</div>
 				<div class="card-body">
-					<h5 class="card-title d-flex flex-column">0 <span>Ton</span></h5>
+					<h5 class="card-title d-flex flex-column">{saldoFilterBekas} <span>Ton</span></h5>
 				</div>
 			</div>
 		</div>
