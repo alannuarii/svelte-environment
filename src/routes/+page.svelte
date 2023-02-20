@@ -4,12 +4,15 @@
 	import { onMount } from 'svelte';
 
 	export let data;
+
 	$: saldoSludge = 0;
 	$: saldoOliBekas = 0;
 	$: saldoMajunBekas = 0;
 	$: saldoFilterBekas = 0;
+	$: totalProses = 0;
+	$: totalDomestik = 0;
 
-	let mutasiLB3 = data.data;
+	let mutasiLB3 = data.data1.data;
 
 	const calculate = (dataLB3) => {
 		const arraySludge = [];
@@ -45,6 +48,26 @@
 			saldoFilterBekas += filter;
 		}
 	};
+
+	let debit = data.data2.data;
+
+	const { proses, domestik } = debit.reduce((acc, cur) => {
+		if (!acc[cur.jenis]) {
+			acc[cur.jenis] = [];
+		}
+		acc[cur.jenis].push(cur);
+		return acc;
+	}, {});
+
+	if (typeof domestik !== 'undefined') {
+		for (const flow of domestik) {
+			totalDomestik += flow.nilai;
+		}
+	} else {
+		for (const flow of proses) {
+			totalProses += flow.nilai;
+		}
+	}
 
 	onMount(() => {
 		calculate(mutasiLB3);
@@ -95,7 +118,7 @@
 					Debit Limbah Proses
 				</div>
 				<div class="card-body">
-					<h5 class="card-title d-flex flex-column">0 <span>{satuan}</span></h5>
+					<h5 class="card-title d-flex flex-column">{totalProses} <span>{satuan}</span></h5>
 				</div>
 			</div>
 			<div class="card text-bg-secondary">
@@ -103,7 +126,7 @@
 					Debit Limbah Domestik
 				</div>
 				<div class="card-body">
-					<h5 class="card-title d-flex flex-column">0 <span>{satuan}</span></h5>
+					<h5 class="card-title d-flex flex-column">{totalDomestik} <span>{satuan}</span></h5>
 				</div>
 			</div>
 		</div>
