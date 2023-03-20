@@ -10,3 +10,4 @@ export const load = async () => {
 		data2
 	};
 };
+// tes
