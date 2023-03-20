@@ -3,3 +3,6 @@ export const convertPath = (tahunBulan, path) => {
 	const result = `${pathArray.join('-').slice(7)}-${tahunBulan}`;
 	return result;
 };
+// tes 
+
+
